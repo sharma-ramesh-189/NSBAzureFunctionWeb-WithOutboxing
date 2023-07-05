@@ -24,9 +24,8 @@ namespace ASBFunctionTrigger
             {
                 var configuration = new ServiceBusTriggeredEndpointConfiguration(AzureServiceBusTriggerFunction.EndpointName, "AzureServiceBusConnection");
                 configuration.UseSerialization<NewtonsoftSerializer>();
-
                 configuration.AdvancedConfiguration.UsePersistence<CosmosPersistence>()
-                    .CosmosClient(new CosmosClient("AccountEndpoint=https://localhost:7137/;AccountKey=9tZqCVYpaNwfKHZG4Umel5KnQ0f7xC8PG2KXj8OMwOamx1NfAffBPwUIPHXHmrSyl3KEAm96Un6OACDb7JQIkg==;"))
+                    .CosmosClient(new CosmosClient("AccountEndpoint=https://localhost:8081/;AccountKey=9tZqCVYpaNwfKHZG4Umel5KnQ0f7xC8PG2KXj8OMwOamx1NfAffBPwUIPHXHmrSyl3KEAm96Un6OACDb7JQIkg=="))
                     .DatabaseName("Outbox")
                     .DefaultContainer(
                         containerName: "Product",
